@@ -1,0 +1,132 @@
+Попробуйте следующие шаги:
+
+Импорт библиотеки и создание интерфейса:
+Вставьте этот код в начало файла Drawbot_image_to_gcode_v2.pde, до функции setup():
+
+Java
+
+import controlP5.*;
+
+ControlP5 cp5;
+
+Код для кнопок и их функций:
+Вставьте этот код в функцию setup():
+
+Java
+
+void setup() {
+  size(1415, 900, P3D);
+  frame.setLocation(200, 200);
+  surface.setResizable(true);
+  surface.setTitle("Drawbot_image_to_gcode_v2, version 3.75");
+  colorMode(RGB);
+  frameRate(999);
+  
+  cp5 = new ControlP5(this);
+
+  // Кнопки для команд
+  cp5.addButton("loadNextPFM")
+     .setLabel("Load Next PFM")
+     .setPosition(20, 20)
+     .setSize(200, 40)
+     .onClick(new CallbackListener() {
+       public void controlEvent(CallbackEvent event) {
+         loadNextPFM();
+       }
+     });
+
+  cp5.addButton("rotateDrawing")
+     .setLabel("Rotate Drawing")
+     .setPosition(20, 70)
+     .setSize(200, 40)
+     .onClick(new CallbackListener() {
+       public void controlEvent(CallbackEvent event) {
+         rotateDrawing();
+       }
+     });
+
+  cp5.addButton("zoomIn")
+     .setLabel("Zoom In")
+     .setPosition(20, 120)
+     .setSize(200, 40)
+     .onClick(new CallbackListener() {
+       public void controlEvent(CallbackEvent event) {
+         zoomIn();
+       }
+     });
+
+  cp5.addButton("zoomOut")
+     .setLabel("Zoom Out")
+     .setPosition(20, 170)
+     .setSize(200, 40)
+     .onClick(new CallbackListener() {
+       public void controlEvent(CallbackEvent event) {
+         zoomOut();
+       }
+     });
+
+  cp5.addButton("resetDrawing")
+     .setLabel("Reset Drawing")
+     .setPosition(20, 220)
+     .setSize(200, 40)
+     .onClick(new CallbackListener() {
+       public void controlEvent(CallbackEvent event) {
+         resetDrawing();
+       }
+     });
+
+  cp5.addButton("generateGcode")
+     .setLabel("Generate G-code")
+     .setPosition(20, 270)
+     .setSize(200, 40)
+     .onClick(new CallbackListener() {
+       public void controlEvent(CallbackEvent event) {
+         generateGcode();
+       }
+     });
+
+  // Остальная часть вашего setup() кода
+}
+
+
+Функции для кнопок:
+Вставьте функции для кнопок после функции setup():
+
+Java
+
+void loadNextPFM() {
+  println("Load next Path Finding Module");
+  // Вызов соответствующей функции из скрипта
+}
+
+void rotateDrawing() {
+  println("Rotate drawing");
+  // Вызов соответствующей функции из скрипта
+}
+
+void zoomIn() {
+  println("Zoom in");
+  // Вызов соответствующей функции из скрипта
+}
+
+void zoomOut() {
+  println("Zoom out");
+  // Вызов соответствующей функции из скрипта
+}
+
+void resetDrawing() {
+  println("Reset drawing");
+  // Вызов соответствующей функции из скрипта
+}
+
+void generateGcode() {
+  println("Generate G-code");
+  // Вызов соответствующей функции из скрипта
+}
+
+Вы
+Отправлено пользователем вы:
+кнопки появились, но они очень маленькие и они накладываются на рисунок , 
+можно их расположить справа у края окна или они всегда так и будут, 
+если их нельзя перенести вправо то надо их в любом случае делать больше 
+и тогда они совсем рабочее поле перекроют или справа надо колонку под них
