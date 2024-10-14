@@ -132,35 +132,6 @@ void setup() {
   //}
 }
 /////////////////////////////////////////////////////////////////
-
-
-//void setup() {
-//  size(1415, 900, P3D);
-//  frame.setLocation(200, 200);
-//  surface.setResizable(true);
-//  surface.setTitle("Drawbot_image_to_gcode_v2, version 3.75");
-//  colorMode(RGB);
-//  frameRate(4);
-//  //randomSeed(millis());
-//  randomSeed(3);
-//  d1 = new botDrawing();
-//  dx = new Limit(); 
-//  dy = new Limit(); 
-//  copic = new Copix();
-//  loadInClass(pfms[current_pfm]);
-
-//  // If the clipboard contains a URL, try to download the picture instead of using local storage.
-//  String url = GClip.paste();
-//  if (match(url.toLowerCase(), "^https?:...*(jpg|png)") != null) {
-//    println("Image URL found on clipboard: "+ url);
-//    path_selected = url;
-//    state++;
-//  } else 
-//  {
-//    println("image URL not found on clipboard");
-//    selectInput("Select an image to process:", "fileSelected");
-//  }
-//}
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 void loadNextPFM() {
   println("Load next Path Finding Module");
